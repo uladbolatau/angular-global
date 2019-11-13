@@ -1,0 +1,27 @@
+Typescript:
+ ☐ enum
+ ☐ generic
+ ☐ lookups
+ ☐ interface
+
+Break down:
+ ✔ header @done (19-11-13 23:24)
+ ✔ footer @done (19-11-13 23:24)
+ ✔ body (contain `add course` button) @done (19-11-13 23:36)
+ ✔ breadcrumbs @done (19-11-13 23:25)
+ ✔ search form @done (19-11-13 23:27)
+ ✔ course card @done (19-11-13 23:25)
+
+TODO:
+ ☐ Projects structure
+
+Comments:
+ ☐ No access to Zeplin
+ ☐ TSLint is depricated, is it ok, if I'll use EsLint? PROF: https://www.npmjs.com/package/tslint
+ ☐ Should I break down as it broken into presentation from home task?
+ ☐ Should app loading from created page or it enough to load Angular start page?
+
+
+Usefull links:
+ ☐ https://angular.io/guide/styleguide
+ ☐ https://www.typescriptlang.org/docs/home.html
