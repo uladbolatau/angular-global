@@ -1,0 +1,111 @@
+$color-bg: #fff;
+$color-arrow: #666;
+$color-shadow: #666;
+$color-link-bg: #f0f0f4;
+
+.account {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  font-size: 1.6rem;
+  line-height: 1;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    border: solid $color-arrow;
+    border-width: 0 1px 1px 0;
+    background: none;
+    font-size: 0;
+    line-height: 0;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    top: 24px;
+    transition: transform 200ms ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      transform: rotate(-135deg);
+      transition: transform 200ms ease-in-out;
+      top: 27px;
+    }
+
+    #{$this}-more {
+      transition: max-height 200ms ease-in-out;
+      max-height: 300px;
+    }
+
+    #{$this}__avatar {
+      opacity: 0.6;
+      transition: max-height 200ms ease-in-out;
+    }
+  }
+
+  &__avatar {
+    background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    line-height: 0;
+    margin-right: 10px;
+    position: relative;
+    border-radius: 100%;
+    transition: max-height 200ms ease-in-out;
+  }
+
+  &__username {
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-right: 10px;
+    cursor: default;
+  }
+
+  &-more {
+    width: 100%;
+    background: $color-bg;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    box-shadow: 0 0 5px -2px $color-shadow;
+    border-radius: 2px;
+    max-height: 0;
+    transition: max-height 200ms ease-in-out;
+    overflow: hidden;
+
+    &-item {
+      list-style: none;
+
+      &__cta {
+        display: block;
+        padding: 5px 15px;
+        transition: background 200ms ease-in-out;
+
+        &:first-child {
+          padding-top: 15px;
+        }
+
+        &:last-child {
+          padding-bottom: 15px;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+          background: $color-link-bg;
+          transition: background 200ms ease-in-out;
+        }
+      }
+    }
+  }
+}
