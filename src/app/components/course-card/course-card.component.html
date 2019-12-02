@@ -1,21 +1,22 @@
-<section class="course-card">
-  <time pubdate="2020-11-22" class="course-card__date">22.11.20</time>
-  <h1 class="course-card__title">Course name</h1>
-  <p class="course-card-description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-  <span datetime="PT1H34M" class="course-card__time">01h 34min</span>
+<section class="course-card" data-id="{{ course.id }}">
+  <time [attr.pubdate]="course.created" class="course-card__date">{{ course.created }}</time>
+  <h1 class="course-card__title">{{ course.title }}</h1>
+  <p class="course-card-description">{{ course.description }}</p>
+  <span [attr.datetime]="course.duration" class="course-card__time">{{ course.duration }}</span>
   <div class="course-card-more-wrapper">
     <button class="course-card-more__open">...</button>
     <ul class="course-card-more">
       <li class="course-card-more-item">
-        <a href="#" class="course-card-more-item__cta">Edit</a>
+        <button
+          class="course-card-more-item__cta" (click)="edit()">Edit</button>
       </li>
       <li class="course-card-more-item">
-        <a href="#" class="course-card-more-item__cta">Delete</a>
+        <button
+          class="course-card-more-item__cta" (click)="delete()">Delete</button>
       </li>
       <li class="course-card-more-item">
-        <a href="#" class="course-card-more-item__cta">Copy link</a>
+        <button
+          class="course-card-more-item__cta">Copy link</button>
       </li>
     </ul>
   </div>

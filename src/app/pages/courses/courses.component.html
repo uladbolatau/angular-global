@@ -1,11 +1,16 @@
 <section class="courses">
   <div class="courses-header">
-    <button class="courses__add">Add course</button>
+    <button class="courses__add" (click)="addNewCourse()">Add course</button>
   </div>
   <div class="courses-body">
-    <app-course-card></app-course-card>
+    <app-course-card
+      *ngFor="let courseItem of coursesList"
+      [course]="courseItem"
+      (onDelete)="onDelete($event)"
+      (onEdit)="onEdit($event)"
+    ></app-course-card>
   </div>
   <div class="courses-footer">
-    <button class="courses__load">Load more</button>
+    <button class="courses__load" (click)="loadMore()">Load more</button>
   </div>
 </section>

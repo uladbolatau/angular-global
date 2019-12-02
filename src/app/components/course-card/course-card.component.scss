@@ -1,6 +1,7 @@
 $color-bg: #fff;
 $color-shadow: #666;
 $color-more-bg: #f0f0f4;
+$color-button-hover: #e6e6e6;
 
 .course-card {
   display: flex;
@@ -9,7 +10,7 @@ $color-more-bg: #f0f0f4;
   background: $color-bg;
   border-radius: 4px;
   transition: box-shadow 200ms ease-in-out;
-  padding: 20px 40px;
+  padding: 20px;
   margin-bottom: 10px;
 
   &:hover {
@@ -19,7 +20,7 @@ $color-more-bg: #f0f0f4;
 
   &__date {
     font-weight: 300;
-    margin-right: 10px;
+    margin-right: 30px;
   }
 
   &__title {
@@ -46,7 +47,6 @@ $color-more-bg: #f0f0f4;
   &__time {
     font-weight: 300;
     margin-right: 10px;
-    min-width: 75px;
   }
 
   &-more {
@@ -64,6 +64,7 @@ $color-more-bg: #f0f0f4;
     border-radius: 2px;
     max-height: 0;
     transition: max-height 200ms ease-in-out;
+    box-shadow: 0 4px 16px -13px $color-shadow;
 
     &-wrapper {
       position: relative;
@@ -88,7 +89,19 @@ $color-more-bg: #f0f0f4;
 
       &__cta {
         display: block;
+        width: 100%;
         padding: 15px;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        text-align: left;
+
+        &:active,
+        &:focus,
+        &:hover {
+          background: $color-button-hover;
+        }
       }
     }
 
