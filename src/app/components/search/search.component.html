@@ -1,5 +1,5 @@
-<form class="search">
+<form class="search" (submit)="submit()">
   <label for="search-input" class="search__label">Search</label>
-  <input type="search" name="course-search" placeholder="Search" class="search__input" id="search-input" />
+  <input type="search" name="course-search" placeholder="Search" [(ngModel)]="searchValue" class="search__input" id="search-input" />
   <div class="search__backdrop"></div>
 </form>

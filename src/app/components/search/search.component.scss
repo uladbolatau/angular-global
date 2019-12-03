@@ -45,7 +45,7 @@ $color-input-border: #737373;
       margin: 0 auto;
       transition: all 200ms ease-in-out;
 
-      & + #{$this}__backdrop {
+      & ~ #{$this}__backdrop {
         opacity: 0.9;
         transition: opacity 200ms ease-in-out;
         z-index: 10;
