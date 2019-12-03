@@ -1,18 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 
-import { FooterComponent } from './core/footer/footer.component';
-import { HeaderComponent } from './core/header/header.component';
-import { UserComponent } from './core/user/user.component';
+import { FooterComponent } from "./core/footer/footer.component";
+import { HeaderComponent } from "./core/header/header.component";
+import { UserComponent } from "./core/user/user.component";
 
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
-import { CourseCardComponent } from './components/course-card/course-card.component';
-import { SearchComponent } from './components/search/search.component';
+import { BreadcrumbsComponent } from "./components/breadcrumbs/breadcrumbs.component";
+import { CourseCardComponent } from "./components/course-card/course-card.component";
+import { SearchComponent } from "./components/search/search.component";
 
-import { CoursesComponent } from './pages/courses/courses.component';
+import { CoursesComponent } from "./pages/courses/courses.component";
 
 @NgModule({
   declarations: [
@@ -25,11 +25,8 @@ import { CoursesComponent } from './pages/courses/courses.component';
     SearchComponent,
     UserComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

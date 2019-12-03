@@ -6,8 +6,8 @@
     <app-course-card
       *ngFor="let courseItem of coursesList"
       [course]="courseItem"
-      (onDelete)="onDelete($event)"
-      (onEdit)="onEdit($event)"
+      (deleteCourse)="delete($event)"
+      (editCourse)="edit($event)"
     ></app-course-card>
   </div>
   <div class="courses-footer">
