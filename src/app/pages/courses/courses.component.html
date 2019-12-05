@@ -1,1 +1,16 @@
-<p>courses works!</p>
+<section class="courses">
+  <div class="courses-header">
+    <button class="courses__add" (click)="addNewCourse()">Add course</button>
+  </div>
+  <div class="courses-body">
+    <app-course-card
+      *ngFor="let courseItem of coursesList"
+      [course]="courseItem"
+      (deleteCourse)="delete($event)"
+      (editCourse)="edit($event)"
+    ></app-course-card>
+  </div>
+  <div class="courses-footer">
+    <button class="courses__load" (click)="loadMore()">Load more</button>
+  </div>
+</section>

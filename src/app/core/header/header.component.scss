@@ -1,0 +1,72 @@
+$color-bg: #fff;
+$color-text: #000;
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background: $color-bg;
+  color: $color-text;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 2rem;
+    padding-left: 50px;
+    color: $color-text;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-text;
+
+      &:before {
+        opacity: 0.6;
+        transition: opacity 200ms ease-in-out;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      transition: opacity 200ms ease-in-out;
+    }
+
+    &:before {
+      background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%),
+        -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+      background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%),
+        -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+      background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%),
+        -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+      background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%),
+        radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+      width: 40px;
+      height: 40px;
+      left: 0;
+      z-index: 1;
+    }
+
+    &:after {
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 0;
+      margin: 10px;
+      background: $color-bg;
+      z-index: 2;
+    }
+  }
+}

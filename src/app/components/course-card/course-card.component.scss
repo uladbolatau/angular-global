@@ -1,0 +1,119 @@
+$color-bg: #fff;
+$color-shadow: #666;
+$color-more-bg: #f0f0f4;
+$color-button-hover: #e6e6e6;
+
+.course-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $color-bg;
+  border-radius: 4px;
+  transition: box-shadow 200ms ease-in-out;
+  padding: 20px;
+  margin-bottom: 10px;
+
+  &:hover {
+    box-shadow: 0 0 16px -10px $color-shadow;
+    transition: box-shadow 200ms ease-in-out;
+  }
+
+  &__date {
+    font-weight: 300;
+    margin-right: 30px;
+  }
+
+  &__title {
+    margin: 0 10px 0 0;
+    width: 20%;
+    overflow: hidden;
+    font-size: 1.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &-description {
+    width: 60%;
+    margin: 0 10px 0 0;
+    max-height: 40px;
+    line-height: 2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__time {
+    font-weight: 300;
+    margin-right: 10px;
+  }
+
+  &-more {
+    $this: &;
+
+    position: absolute;
+    z-index: 1;
+    top: 95%;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+    overflow: hidden;
+    background: $color-more-bg;
+    border-radius: 2px;
+    max-height: 0;
+    transition: max-height 200ms ease-in-out;
+    box-shadow: 0 4px 16px -13px $color-shadow;
+
+    &-wrapper {
+      position: relative;
+
+      &:active,
+      &:focus,
+      &:hover {
+        & #{$this} {
+          max-height: 200px;
+          transition: max-height 200ms ease-in-out;
+        }
+
+        #{$this}__open {
+          background: $color-more-bg;
+          transition: background 100ms ease-in-out;
+        }
+      }
+    }
+
+    &-item {
+      list-style: none;
+
+      &__cta {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        text-align: left;
+
+        &:active,
+        &:focus,
+        &:hover {
+          background: $color-button-hover;
+        }
+      }
+    }
+
+    &__open {
+      padding: 10px;
+      margin-right: 0;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background 100ms ease-in-out;
+      border-radius: 2px;
+    }
+  }
+}

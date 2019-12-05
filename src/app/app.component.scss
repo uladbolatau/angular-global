@@ -1,0 +1,10 @@
+main {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+::ng-deep .container {
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+}

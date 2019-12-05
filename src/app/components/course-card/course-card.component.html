@@ -1,1 +1,20 @@
-<p>course-card works!</p>
+<section class="course-card" data-id="{{ course.id }}">
+  <time [attr.pubdate]="course.created" class="course-card__date">{{ course.created }}</time>
+  <h1 class="course-card__title">{{ course.title }}</h1>
+  <p class="course-card-description">{{ course.description }}</p>
+  <span [attr.datetime]="course.duration" class="course-card__time">{{ course.duration }}</span>
+  <div class="course-card-more-wrapper">
+    <button class="course-card-more__open">...</button>
+    <ul class="course-card-more">
+      <li class="course-card-more-item">
+        <button class="course-card-more-item__cta" (click)="edit()">Edit</button>
+      </li>
+      <li class="course-card-more-item">
+        <button class="course-card-more-item__cta" (click)="delete()">Delete</button>
+      </li>
+      <li class="course-card-more-item">
+        <button class="course-card-more-item__cta">Copy link</button>
+      </li>
+    </ul>
+  </div>
+</section>

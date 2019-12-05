@@ -1,9 +1,5 @@
-import { ICourse } from '../interfaces/course';
+import { ICourse } from "../interfaces/course";
 
 export class Course implements ICourse {
-   id: number;
-   title: string;
-   created: Date;
-   duration: number;
-   description: string;
+  constructor(public id: number, public title: string, public created: string, public duration: number, public description: string) {}
 }

@@ -1,0 +1,67 @@
+$color-backdrop: #fff;
+$color-input-border: #737373;
+
+:host {
+  flex-grow: 1;
+}
+
+.search {
+  $this: &;
+
+  display: flex;
+  justify-content: center;
+
+  &__label {
+    font-size: 0;
+    line-height: 0;
+  }
+
+  &__input {
+    display: block;
+    width: 40%;
+    min-width: 150px;
+    padding: 5px 10px;
+    position: relative;
+    z-index: 11;
+    border: none;
+    border-bottom: 1px solid $color-input-border;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    background: transparent;
+    opacity: 0.6;
+    transition: all 200ms ease-in-out;
+
+    &:active,
+    &:focus,
+    &:hover {
+      opacity: 1;
+      transition: opacity 200ms ease-in-out;
+    }
+
+    &:active,
+    &:focus {
+      width: 70%;
+      margin: 0 auto;
+      transition: all 200ms ease-in-out;
+
+      & ~ #{$this}__backdrop {
+        opacity: 0.9;
+        transition: opacity 200ms ease-in-out;
+        z-index: 10;
+      }
+    }
+  }
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    background: $color-backdrop;
+    transition: opacity 200ms ease-in-out;
+  }
+}
